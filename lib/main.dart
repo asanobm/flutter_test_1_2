@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_test_1_2/pages/draws.dart';
+import 'package:flutter_test_1_2/templates/page.template.dart';
 
 void main() => runApp(App());
 
@@ -10,7 +10,9 @@ class App extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: DrawWidget(),
+      home: PageTemplate(
+        title: 'Library Demo App',
+      ),
     );
   }
 }
