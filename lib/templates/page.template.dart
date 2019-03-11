@@ -11,18 +11,6 @@ class PageTemplate extends StatefulWidget {
 }
 
 class _PageState extends State<PageTemplate> {
-  final List<Widget> subPages = [
-    DrawerHeader(
-      child: Text('Draws'),
-      decoration: BoxDecoration(color: Colors.blueGrey),
-    ),
-    ListTile(
-        title: Text('test'),
-        onTap: () => () {
-              /// TODO: change current view
-            })
-  ];
-
   /// current page
   Widget page;
 
@@ -46,7 +34,29 @@ class _PageState extends State<PageTemplate> {
     return Scaffold(
         drawer: DemoDraw(
           title: Text(widget.title),
-          tiles: this.subPages,
+          tiles: <Widget>[
+            DrawerHeader(
+              child: Text('Draw menu'),
+            ),
+            ListTile(
+              title: Text('Hello'),
+              onTap: () {
+                this.setState(() {
+                  Navigator.pop(context);
+                  this.page = DrawWidget();
+                });
+              },
+            ),
+            ListTile(
+              title: Text('Test'),
+              onTap: () {
+                this.setState(() {
+                  Navigator.pop(context);
+                  this.page = TestWidget();
+                });
+              },
+            )
+          ],
         ),
         appBar: AppBar(title: Text(widget.title)),
         body: this.page);
