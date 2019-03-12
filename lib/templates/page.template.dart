@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test_1_2/pages/draws.dart';
+import 'package:flutter_test_1_2/pages/google.maps.dart';
 import 'package:flutter_test_1_2/widgets/draws.dart';
 
 class PageTemplate extends StatefulWidget {
@@ -53,6 +54,15 @@ class _PageState extends State<PageTemplate> {
                 this.setState(() {
                   Navigator.pop(context);
                   this.page = TestWidget();
+                });
+              },
+            ),
+            ListTile(
+              title: Text('Google Mpas'),
+              onTap: () {
+                this.setState(() {
+                  Navigator.pop(context);
+                  this.page = ExampleMaps();
                 });
               },
             )
